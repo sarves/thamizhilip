@@ -12,6 +12,7 @@ All these have been developing on top of various tools and resources, including 
 ```pip/pip3 install thamizhilip```
 
 This will install all required dependencies as well, including stanza that is used to do the POS tagging. After installing thamizhilip, you can start using it. **You need python 3.6 or higher** to install thamizhilip.
+
 2. Import thamizhilip: 
 
 ```from thamizhilip import tamil``` 
