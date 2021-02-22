@@ -1,10 +1,15 @@
-## Welcome to GitHub Pages
+# ThamizhiLIP: Thamizhi Linguistic Information Processing Library
+ThamizhiLIP, a python library, has the following functionalities:
+- POS tagging
+- Morphological analysis
+- Dependency parsing
 
-You can use the [editor on GitHub](https://github.com/sarves/thamizhilip/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## How to use this library
+1. Install **thamizhilip**: `pip/pip3 install thamizhilip`. This will install all required dependencies as well, including stanza that is used to do the POS tagging. After installing thamizhilip, you can start using it. **You need python 3.6 or higher** to install thamizhilip.
+2. Import thamizhilip: `from thamizhilip import tamil` in your python enviornment.
+3. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
+## POS tagging
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
