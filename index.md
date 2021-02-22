@@ -3,6 +3,7 @@ ThamizhiLIP, a python library, has the following functionalities:
 - POS tagging
 - Morphological analysis
 - Dependency parsing
+All these have been developing on top of various tools and resource, including Stanza and foma. I have used both rule-based and machine learning based approaches to create the models that are used in this tool. 
 
 ## How to use this library
 1. Install **thamizhilip**: `pip/pip3 install thamizhilip`. This will install all required dependencies as well, including stanza that is used to do the POS tagging. After installing thamizhilip, you can start using it. **You need python 3.6 or higher** to install thamizhilip.
