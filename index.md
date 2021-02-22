@@ -3,6 +3,7 @@ ThamizhiLIP, a python library, has the following functionalities:
 - POS tagging
 - Morphological analysis
 - Dependency parsing
+
 All these have been developing on top of various tools and resource, including Stanza and foma. I have used both rule-based and machine learning based approaches to create the models that are used in this tool. 
 
 ## How to use this library
@@ -105,9 +106,11 @@ You can find more information about these tools via the following sites:
 
 ### Acknowledgment
 I would like to express my appreciation to my supervisors Prof. Gihan Dias, and Prof. Miriam Butt for all their guidance. Futher, I am thankful to the National Language Processing Centre, University of Moratuwa, Sri Lanka for providing all the facilities to build the current version of ThamizhiLIP. 
+
 In addition, I would also like to mention that this research was supported by the Accelerating Higher Education Expansion and Development (AHEAD) Operation of the Ministry of Higher Education, Sri Lanka funded by the World Bank, and also supported by the DAAD (German Academic Exchange Office)
 
 ### Contact and support
 Do you have any problems? Please to reach out to me - K. Sarveswaran
-Also feel free to fork and improve ThamizhiLIP. This is realsed under the Apache 2.0.
+Also feel free to fork and improve ThamizhiLIP. Also send me your valuable feedback so that I can improve this lib. 
+This is realsed under the Apache 2.0.
 
