@@ -57,11 +57,14 @@ tamil.downloadModels()
 
 #In order to use the dependency parser, you need to alway load various models. 
 depModel=tamil.loadModels()
-This you can do spearately and load them or you can load them as shown below, when parsing a sentence. Need to feed sentence at a time. 
+
+#This you can do spearately and load them or you can load them 
+#as shown below, when parsing a sentence. Need to feed sentence at a time. 
 print(tamil.depTag("கண்ணன் அந்தப் புத்தகத்தைப் செய்தான்",depModel))
 
 #for instance,
 #>>> print(tamil.depTag("கண்ணன் அந்தப் புத்தகத்தைப் செய்தான்",depModels))
+#would give you the following output:
 #கண்ணன் அந்தப் புத்தகத்தைப் செய்தான்
 #1|PROPN|nsubj|4
 #2|DET|det|3
@@ -77,17 +80,33 @@ print(tamil.depTag("கண்ணன் அந்தப் புத்தகத�
  
 ```
 
-**Bold** and _Italic_ and `Code` text
+### Cite
+If you use this tool, please cite us:
+- Sarveswaran, K., Dias, G. and Butt, M.,”ThamizhiMorph: A Morphological Parser for the Tamil Language”, Special Issue on Machine Translation for Low-Resource Languages, Machine Translation, 2020 [accepted] 
+- Sarveswaran, K. and Dias, G., 2020. ThamizhiUDp: A Dependency Parser for Tamil. arXiv preprint arXiv:2012.13436. (this was published at ICON2020, held at IIT Patna)
+- Sarveswaran, K., Dias, G. and Butt, M.: “Using Meta-Morph Rules to develop Morphological Analysers: A case study concerning Tamil”, 14th International Conference on Finite-State Methods and Natural Language Processing,Dresden, Germany, September 23–25, 2019.
+- Sarveswaran, K., Dias, G. and Butt, M.: “ThamizhiFST: A Morphological Analyser and Generator for Tamil Verbs,” 3rd International Conference on Information Technology Research (ICITR), pp. 1-6, Moratuwa, Sri Lanka, 2018.
 
-[Link](url) and ![Image](src)
+### Future work
+A lot to be done, this is just a begining. 
+You can expect the following improvements in very near future:
+- Improvement of learning models (currently, POS and Morph shows more than90% accuracy, and Dependency parser shows only 60%)
+- Adding lemmatisation feature
+- Adding contextual morphological analysis 
+- Adding a preprocessors for various tasks, like normalisation etc.
+- Nannool (நன்னூல்) based word validator (I have converted Nannool rules to python coding)
 
+### For more imformation
+You can find more information about these tools via the following sites:
+- http://nlp-tools.uom.lk/thamizhi-pos/
+- http://nlp-tools.uom.lk/thamizhi-morph
+- http://nlp-tools.uom.lk/thamizhi-udp
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Acknowledgment
+I would like to express my appreciation to my supervisors Prof. Gihan Dias, and Prof. Miriam Butt for all their guidance. Futher, I am thankful to the National Language Processing Centre, University of Moratuwa, Sri Lanka for providing all the facilities to build the current version of ThamizhiLIP. 
+In addition, I would also like to mention that this research was supported by the Accelerating Higher Education Expansion and Development (AHEAD) Operation of the Ministry of Higher Education, Sri Lanka funded by the World Bank, and also supported by the DAAD (German Academic Exchange Office)
 
-### Jekyll Themes
+### Contact and support
+Do you have any problems? Please to reach out to me - K. Sarveswaran
+Also feel free to fork and improve ThamizhiLIP. This is realsed under the Apache 2.0.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sarves/thamizhilip/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
