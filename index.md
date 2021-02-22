@@ -7,23 +7,9 @@ ThamizhiLIP, a python library, has the following functionalities:
 All these have been developing on top of various tools and resources, including Stanza and foma. I have used both rule-based and machine learning based approaches to create the models that are used in this tool. 
 
 ## How to use this library
-1. Install **thamizhilip**: 
-
-```pip/pip3 install thamizhilip```
-
-This will install all required dependencies as well, including stanza that is used to do the POS tagging. After installing thamizhilip, you can start using it. **You need python 3.6 or higher** to install thamizhilip.
-
-2. Import thamizhilip: 
-
-```from thamizhilip import tamil``` 
-
-in your python environment / python IDLE.
-
-3. Download required models: 
-
-```tamil.downloadModels()``` 
-
-This will download and store all the models and resources required for processing in your HOME directory.
+1. Install **thamizhilip**: ```pip/pip3 install thamizhilip``` This will install all required dependencies as well, including stanza that is used to do the POS tagging. After installing thamizhilip, you can start using it. **You need python 3.6 or higher** to install thamizhilip.
+2. Import thamizhilip: ```from thamizhilip import tamil``` in your python environment / python IDLE.
+3. Download required models: ```tamil.downloadModels()``` This will download and store all the models and resources required for processing in your HOME directory.
 
 You are done! You can use this to do POS, Morphological, and Dependency Parsing.
 
