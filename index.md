@@ -7,29 +7,31 @@ ThamizhiLIP, a python library, has the following functionalities:
 ## How to use this library
 1. Install **thamizhilip**: `pip/pip3 install thamizhilip`. This will install all required dependencies as well, including stanza that is used to do the POS tagging. After installing thamizhilip, you can start using it. **You need python 3.6 or higher** to install thamizhilip.
 2. Import thamizhilip: `from thamizhilip import tamil` in your python enviornment.
-3. 
+3. Download required models: `tamil.downloadModels()`. This will download and store all the models and resources required for processing.
+You are done, now. You can use this to do POS, Morphological, and Dependency Parsing.
 
 ## POS tagging
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+There are several POS tagsets available for Tamil. Thamizhilip can tag using either University POS (UPOS) tagset or Amrita POS tagset.
+The following example show the **complete** example for POS tagging.
 
 ```markdown
-Syntax highlighted code block
+from thamizhilip import tamil
+tamil.downloadModels()
 
-# Header 1
-## Header 2
-### Header 3
+#Loading models, use either one of this:
+#if you want to UPOS tag
+mypos_model=tamil.loadModels("pos")
+#if you want to Amrita tag
+mypos_model=tamil.loadModels("pos","amrita")
 
-- Bulleted
-- List
+#POS tag data, you can feed a word or sentence
+print(tamil.posTag("your Tamil data here",mypos_model)
 
-1. Numbered
-2. List
-
+```
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
-```
+
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
