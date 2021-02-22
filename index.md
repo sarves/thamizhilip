@@ -12,8 +12,8 @@ You are done, now. You can use this to do POS, Morphological, and Dependency Par
 
 
 ## POS tagging
-There are several POS tagsets available for Tamil. Thamizhilip can tag using either University POS (UPOS) tagset or Amrita POS tagset.
-The following example show the **complete** example for POS tagging.
+There are several POS tagsets available for Tamil. Thamizhilip can tag using either [University POS (UPOS)](https://universaldependencies.org/u/pos/) tagset or Amrita POS tagset.
+The following example show a **complete** example for POS tagging.
 
 ```markdown
 from thamizhilip import tamil
@@ -31,8 +31,8 @@ print(tamil.posTag("your Tamil data here",mypos_model)
 ```
 
 ## Morphological Analysis
-There are several tagsets available for morphological annotations. Thamizhilip uses its own tagset and Universal Feature inventory by Universal Dependencies (UFeat). Thamizhilip tagset is more gradular than UFeat.
-The following example show the **complete** example for Morphological tagging.
+There are several tagsets available for morphological annotations. Thamizhilip uses its own tagset and [Universal Feature inventory](https://universaldependencies.org/u/feat/index.html) by Universal Dependencies (UFeat). Thamizhilip tagset is more gradular than UFeat.
+The following example show a **complete** example for Morphological tagging.
 
 ```markdown
 from thamizhilip import tamil
@@ -47,22 +47,34 @@ print(tamil.morphTag("your Tamil word","ud"))
 
 ```
 
-
-## Morphological Analysis
-There are several tagsets available for morphological annotations. Thamizhilip uses its own tagset and Universal Feature inventory by Universal Dependencies (UFeat). Thamizhilip tagset is more gradular than UFeat.
-The following example show the **complete** example for Morphological tagging.
+## Dependency Parsing
+ThamizhiLIP can parse given sentence using Universal Dependency annotation scheme. 
+The following example show a **complete** example.
 
 ```markdown
 from thamizhilip import tamil
 tamil.downloadModels()
 
-#Morphological tagging, you need to feed a word at a time
-#if you want to get the analysis using Thamizhilip tagset
-print(tamil.morphTag("your Tamil word"))
+#In order to use the dependency parser, you need to alway load various models. 
+depModel=tamil.loadModels()
+This you can do spearately and load them or you can load them as shown below, when parsing a sentence. Need to feed sentence at a time. 
+print(tamil.depTag("கண்ணன் அந்தப் புத்தகத்தைப் செய்தான்",depModel))
 
-#if you want to get the analysis using Universal Feature Set
-print(tamil.morphTag("your Tamil word","ud"))
+#for instance,
+#>>> print(tamil.depTag("கண்ணன் அந்தப் புத்தகத்தைப் செய்தான்",depModels))
+#கண்ணன் அந்தப் புத்தகத்தைப் செய்தான்
+#1|PROPN|nsubj|4
+#2|DET|det|3
+#3|NOUN|obj|4
+#4|VERB|root|0
+#5|PUNCT|punct|4
 
+#As shown in the output above, output will have 4 columns. 
+#1st column is a serial number
+#2nd column UPOS
+#3rd column [Dependency type](https://universaldependencies.org/u/dep/all.html)
+#4th column depended word or token (its serial number is given)
+ 
 ```
 
 **Bold** and _Italic_ and `Code` text
