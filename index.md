@@ -4,18 +4,19 @@ ThamizhiLIP, a python library, has the following functionalities:
 - Morphological analysis
 - Dependency parsing
 
-All these have been developing on top of various tools and resources, including Stanza and foma. I have used both rule-based and machine learning based approaches to create the models that are used in this tool. 
+All these have been developed on top of various tools and resources, including Stanza and foma. I have used both rule-based and deep learning approaches to create models that are used in thamizhilip. 
 
 ## How to use this library
-1. Install **thamizhilip** using pip: ```pip/pip3 install thamizhilip``` This will install all required dependencies as well, including stanza that is used to do the POS tagging. After installing thamizhilip, you can start using it. **You need python 3.6 or higher** to install thamizhilip.
+1. Install **thamizhilip** using pip: ```pip/pip3 install thamizhilip``` This will install all required dependencies, including stanza, which used to do the POS tagging and dependency parsing. After installing thamizhilip, you can start using it. **You need python 3.6 or higher** to install thamizhilip.
 2. Import thamizhilip to your python environment / python IDLE : ```from thamizhilip import tamil```
 3. Download required models: ```tamil.downloadModels()``` This will download and store all the models and resources required for processing in your HOME directory.
 
-You are done! You can use this to do POS, Morphological, and Dependency Parsing.
+You are done! You can use this to do POS and Morphological tagging, and Dependency Parsing.
 
 
 ## POS tagging
-There are several POS tagsets available for Tamil. Thamizhilip can tag using either [University POS (UPOS)](https://universaldependencies.org/u/pos/) tagset or Amrita POS tagset.
+There are several POS tagsets available for Tamil. Thamizhilip uses both [University POS (UPOS)](https://universaldependencies.org/u/pos/) tagset and Amrita POS tagset. Therefore, you can get the tagging done using either tagset.
+
 The following example shows a **complete** example for POS tagging.
 
 ```markdown
@@ -25,6 +26,7 @@ tamil.downloadModels()
 #Loading models, use either one of this:
 #if you want to UPOS tag
 mypos_model=tamil.loadModels("pos")
+#or
 #if you want to Amrita tag
 mypos_model=tamil.loadModels("pos","amrita")
 
@@ -66,7 +68,7 @@ depModel=tamil.loadModels()
 print(tamil.depTag("கண்ணன் அந்தப் புத்தகத்தைப் செய்தான்",depModel))
 
 #for instance,
-#>>> print(tamil.depTag("கண்ணன் அந்தப் புத்தகத்தைப் செய்தான்",depModels))
+#>>> print(tamil.depTag("கண்ணன் அந்தப் புத்தகத்தை செய்தான்",depModels))
 #would give you the following output:
 #கண்ணன் அந்தப் புத்தகத்தைப் செய்தான்
 #1|PROPN|nsubj|4
@@ -83,12 +85,16 @@ print(tamil.depTag("கண்ணன் அந்தப் புத்தகத�
  
 ```
 
+### Tamil Word validator
+Apart from POS, Morph, and Dependency tagging, you can use the following script to see whether a given word is a Tamil word. Basically, this script verify the structure of a word against the word formation rules given a well-known Tamil grammar text called Nannool.
+https://github.com/sarves/thamizhi-preprocessor/
+
 ### Cite
 If you use this tool, please cite us:
-- Sarveswaran, K., Dias, G. and Butt, M.,”ThamizhiMorph: A Morphological Parser for the Tamil Language”, Special Issue on Machine Translation for Low-Resource Languages, Machine Translation, 2020 [accepted] 
-- Sarveswaran, K. and Dias, G., 2020. ThamizhiUDp: A Dependency Parser for Tamil. arXiv preprint arXiv:2012.13436. (this was published at ICON2020, held at IIT Patna)
-- Sarveswaran, K., Dias, G. and Butt, M.: “Using Meta-Morph Rules to develop Morphological Analysers: A case study concerning Tamil”, 14th International Conference on Finite-State Methods and Natural Language Processing,Dresden, Germany, September 23–25, 2019.
-- Sarveswaran, K., Dias, G. and Butt, M.: “ThamizhiFST: A Morphological Analyser and Generator for Tamil Verbs,” 3rd International Conference on Information Technology Research (ICITR), pp. 1-6, Moratuwa, Sri Lanka, 2018.
+- Sarveswaran, K., Dias, G., and Butt, M. (2021). Thamizhimorph: A morphological parser for the Tamil language. Machine Translation, 35(1):37–70.
+- Sarveswaran, K. and Dias, G. (2020). Thamizhiudp: A dependency parser for Tamil. In Proceedings of the 17th International Conference on Natural Language Processing, pages 200–207, Indian Institute of Technology Patna, India. NLP Association of India.
+- Sarveswaran, K., Dias, G., and Butt, M. (2019). Using meta-morph rules to develop morphological analysers: A case study concerning Tamil. In Proceedings of the 14th International Conference on Finite-State Methods and Natural Language Processing, pages 76–86, Dresden, Germany. Association for Computational Linguistics.
+- Sarveswaran, K., Dias, G., & Butt, M. (2018). ThamizhiFST: A Morphological Analyser and Generator for Tamil Verbs. In Proceedings of the 3rd International Conference on Information Technology Research (ICITR) (pp. 1-6). IEEE.
 
 ### Future work
 A lot to be done, this is just a beginning. 
